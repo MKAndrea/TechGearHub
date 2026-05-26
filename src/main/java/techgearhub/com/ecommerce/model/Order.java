@@ -21,13 +21,14 @@ public class Order {
 
     @Column(nullable = false)
     private LocalDateTime orderDate;
-
+    
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private OrderStatus status;
+    @Column(name = "status", nullable = false)
+    private OrderStatus status = OrderStatus.PENDING;
 
     @Column(nullable = false)
     private Double total;
+
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
@@ -36,4 +37,6 @@ public class Order {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     @ToString.Exclude
     private List<OrderItem> orderItems;
+    
+    
 }

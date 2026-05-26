@@ -30,4 +30,7 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     @ToString.Exclude
     private List<Order> orders;
+    
+    @Column(nullable = false)
+    private boolean active = true; 
 }

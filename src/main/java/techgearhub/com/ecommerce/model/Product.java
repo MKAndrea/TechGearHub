@@ -2,12 +2,15 @@ package techgearhub.com.ecommerce.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.AllArgsConstructor;
 
 @Entity
 @Table(name = "products")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Product {
@@ -28,6 +31,9 @@ public class Product {
     
     @Column(nullable = false)
     private Integer stock;
+    
+    @Column(nullable = false)
+    private boolean active = true; 
 
     // Relazione: Molti prodotti appartengono a una categoria
     @ManyToOne

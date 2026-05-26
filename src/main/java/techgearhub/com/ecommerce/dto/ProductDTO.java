@@ -1,5 +1,7 @@
 package techgearhub.com.ecommerce.dto;
 
+
+
 public record ProductDTO(
     Long id,
     String name,
