@@ -20,7 +20,7 @@ public class Order {
     private Long id;
 
     @Column(nullable = false)
-    private LocalDateTime orderDate;
+    private LocalDateTime orderDate=LocalDateTime.now();
     
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)

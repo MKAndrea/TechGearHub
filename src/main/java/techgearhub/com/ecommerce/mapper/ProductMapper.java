@@ -5,13 +5,13 @@ import org.mapstruct.Mapping;
 import techgearhub.com.ecommerce.dto.ProductDTO;
 import techgearhub.com.ecommerce.model.Product;
 
-@Mapper(componentModel = "spring") // Dice a Spring di gestire questo Mapper come un Bean (@Component)
+@Mapper(componentModel = "spring") 
 public interface ProductMapper {
 
-    @Mapping(source = "category.id", target = "categoryId")    // Prendi l'id della categoria e mettilo in categoryId
-    @Mapping(source = "category.name", target = "categoryName") // Prendi il nome della categoria e mettilo in categoryName
+    @Mapping(source = "category.id", target = "categoryId")    
+    @Mapping(source = "category.name", target = "categoryName")
     ProductDTO toDTO(Product product);
 
-    @Mapping(source = "categoryId", target = "category.id")     // Fai il percorso inverso
+    @Mapping(source = "categoryId", target = "category.id") 
     Product toEntity(ProductDTO productDTO);
 }

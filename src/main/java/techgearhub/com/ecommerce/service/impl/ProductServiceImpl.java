@@ -40,7 +40,6 @@ public class ProductServiceImpl implements ProductService {
     public ProductDTO createNewProduct(ProductDTO prodottoDto) {
         var productEntity = productMapper.toEntity(prodottoDto);
         var savedProduct = productRepository.save(productEntity);
-        
         return productMapper.toDTO(savedProduct);
     }
 
